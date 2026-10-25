@@ -4,10 +4,10 @@ fetch('model.json').then(r=>r.json()).then(M=>{
   const c=document.getElementById('chart'),g=c.getContext('2d'),W=c.width,H=c.height,p=36;
   const all=D.actual.concat(js,D.persistence),lo=Math.floor(Math.min(...all)),hi=Math.ceil(Math.max(...all));
   const X=i=>p+i*(W-2*p)/(D.actual.length-1),Y=v=>H-p-(v-lo)*(H-2*p)/(hi-lo||1);
-  g.strokeStyle='rgba(255,255,255,.12)';g.fillStyle='rgba(232,244,255,.7)';g.font='12px sans-serif';
+  g.strokeStyle='rgba(18,18,18,.10)';g.fillStyle='#5a4a3a';g.font='12px sans-serif';
   for(let v=lo;v<=hi;v++){g.beginPath();g.moveTo(p,Y(v));g.lineTo(W-p,Y(v));g.stroke();g.fillText(v+' m/s',2,Y(v)+4);}
   const line=(a,col,w)=>{g.strokeStyle=col;g.lineWidth=w;g.beginPath();a.forEach((v,i)=>i?g.lineTo(X(i),Y(v)):g.moveTo(X(i),Y(v)));g.stroke();};
-  line(D.persistence,'#ffbf69',1.4);line(D.actual,'#ffffff',1.8);line(js,'#2ec4b6',2.2);
+  line(D.persistence,'#c9a227',1.6);line(D.actual,'#121212',1.8);line(js,'#b3121b',2.2);
   // metrics
   const t=document.getElementById('mt');[['MAE','MAE (m/s)'],['RMSE','RMSE (m/s)'],['MAPE_%','MAPE (%)'],['R2','R²']].forEach(([k,n])=>{
     t.insertAdjacentHTML('beforeend',`<tr><td>${n}</td><td>${M.metrics.model[k].toFixed(3)}</td><td>${M.metrics.persistence[k].toFixed(3)}</td></tr>`);});

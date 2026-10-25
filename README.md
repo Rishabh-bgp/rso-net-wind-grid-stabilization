@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/img/banner.svg" alt="RSO-Net · Wind Forecasting for Grid Stability: Daoist-style banner, independent reimplementation by Rishabh Aryan" width="100%"></p>
+
 # RSO-Net: Recursive Self-Optimizing TCN-Attention Wind Speed Forecasting with Human-Approved Grid-Stabilization Proposals (Reimplementation)
 
 [![Live demo](https://img.shields.io/badge/Live%20demo-GitHub%20Pages-2ec4b6)](https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Rishabh-bgp/rso-net-wind-grid-stabilization/blob/main/notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb)
@@ -9,13 +11,13 @@
 
 **Keywords:** wind speed forecasting, temporal convolutional network, dilated causal convolution, self-attention, probabilistic forecasting, quantile regression, grid stabilization, human-in-the-loop, PyTorch
 
-## Paper
+## Paper · 論文
 
 Er. Rishabh Aryan, "Recursive Self-Optimizing Neural Architectures for Ultra-High-Resolution Wind Speed Forecasting and Autonomous Grid-Stabilization Protocols Under Extreme Uncertainty," *International Journal of Artificial Intelligence and Communication Networks (IJAICN)*, ISSN 3071-3358, Vol. 02, Issue 03, pp. 5–29, July–September 2026.
 
 Full credit for the method goes to the paper's authors. Any simplifications or mistakes in this reimplementation are mine.
 
-## Method
+## Method · 方法
 
 1. **RSO-Net forecaster:** stacked dilated causal convolutions (dilations 1, 2, 4, 8) followed by multi-head self-attention, with a **quantile head** (P10/P50/P90, monotone by construction) trained with pinball loss.
 2. **Bounded self-optimisation:** after each adaptation window (epoch) a controller adjusts the learning rate within fixed bounds based on validation loss. Every change is logged to `results/controller_log.json`, and weights roll back to the best checkpoint if validation gets worse, so it's bounded, logged and reversible as the paper describes.
@@ -23,7 +25,7 @@ Full credit for the method goes to the paper's authors. Any simplifications or m
 
 The paper's six-agent orchestration (built on the OpenAI Agents SDK) and the frequency-response simulation are not included, since they would need an external API account.
 
-## Architecture
+## Architecture · 架構
 
 ```
 x (B,T,5) → [CausalConv(d=1)→ReLU→…→CausalConv(d=8)→ReLU] → MultiHeadAttn → last step
@@ -32,7 +34,7 @@ outer loop: val loss → BoundedController(lr ∈ [1e-4, 1e-2], rollback)
 P10–P90 band → advisory reserve proposal → human approval gate
 ```
 
-## Data
+## Data · 數據
 
 The original SCADA data used in the paper is confidential and **not publicly available**, so it is not included here (everything in `data/` except the bundled synthetic CSV is git-ignored). The original code was not available either.
 `src/data.py` provides:
@@ -50,7 +52,7 @@ The original SCADA data used in the paper is confidential and **not publicly ava
 Features per time step are wind speed, sin/cos of direction, theoretical power and active power (kW/1000), standardised
 on the training split. The target is wind speed `horizon` steps ahead. The data is split chronologically 70/15/15.
 
-## How to run
+## How to run · 運行
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
@@ -66,7 +68,7 @@ python train.py --csv path/to/scada.csv --epochs 40
 The script prints and saves (`results/*_metrics.json`) **MAE, RMSE, MAPE and R²** on the chronological test split, plus a
 naive persistence baseline for comparison. MAPE uses a 0.5 m/s floor in the denominator so calm periods don't blow it up.
 
-## Smoke-test results (synthetic data only)
+## Smoke-test results (synthetic data only) · 測試
 
 These come from a deliberately tiny run (2 adaptation windows, 3,000 synthetic rows, look-back 32, seed 42) on **synthetic data**, just to check that the pipeline works
 end to end. They say nothing about the method's real accuracy. At this budget the model has not converged and is **worse than persistence**.
@@ -78,23 +80,23 @@ end to end. They say nothing about the method's real accuracy. At this budget th
 | MAPE (%) | 21.227 | 7.654 |
 | R² | 0.597 | 0.934 |
 
-## Live demo
+## Live demo · 演示
 
 **[https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/](https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/)** runs entirely in your browser. A small version of the model (trained briefly on the bundled synthetic CSV to predict the 10-minute change in wind speed) is exported to JSON by `web/export_model.py`, and its forward pass is re-implemented in plain JavaScript (`site/model.js`). `tests/test_js_parity.py` checks that the JS and PyTorch predictions agree within 1e-4. The page shows a forecast chart against persistence, sliders for wind inputs, the metrics and the disclaimer.
 
 ![Live demo screenshot](docs/img/demo.png)
 
-## Notebook
+## Notebook · 筆記本
 
 [`notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb`](notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Rishabh-bgp/rso-net-wind-grid-stabilization/blob/main/notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb) is a short, beginner-friendly walkthrough: load the synthetic CSV, quick EDA plots, a small version of the model, brief training and a comparison with a persistence baseline. It works when opened on its own in Colab (it fetches the repo code and data). It uses **synthetic data only** and does **not** reproduce the paper's results.
 
-## Tests
+## Tests · 測試
 
 ```bash
 pytest -q
 ```
 
-## Repository layout
+## Repository layout · 結構
 
 ```
 ├── train.py              # train + evaluate (MAE/RMSE/MAPE/R²)
@@ -107,16 +109,16 @@ pytest -q
 ├── requirements.txt  LICENSE  .gitignore
 ```
 
-## Limitations
+## Limitations · 局限
 
 - The paper targets sub-minute (30 s) data; the synthetic generator defaults to 10-minute steps (`freq` argument in `synthetic_scada`).
 - ARIMA/LSTM baselines and the multi-agent system are not included; only a persistence baseline is reported.
 
-## Licence
+## Licence · 許可
 
 MIT © 2026 Rishabh Aryan. See [LICENSE](LICENSE). The paper itself remains under its publisher's terms.
 
-## Other repositories by Rishabh Aryan
+## Other repositories by Rishabh Aryan · 其他
 
 - [beed-ml-study](https://github.com/Rishabh-bgp/beed-ml-study)
 - [pan-cancer-classification](https://github.com/Rishabh-bgp/pan-cancer-classification)
