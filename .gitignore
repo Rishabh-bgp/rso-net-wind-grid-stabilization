@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/*
+!data/synthetic/
+!data/synthetic/synthetic_scada.csv
+results/
+*.pt
+.ipynb_checkpoints/
+.DS_Store
