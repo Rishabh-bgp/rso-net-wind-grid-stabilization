@@ -2,7 +2,7 @@
 
 # RSO-Net: Recursive Self-Optimizing TCN-Attention Wind Speed Forecasting with Human-Approved Grid-Stabilization Proposals (Reference Implementation)
 
-[![Live demo](https://img.shields.io/badge/Live%20demo-GitHub%20Pages-b3121b)](https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Rishabh-bgp/rso-net-wind-grid-stabilization/blob/main/notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb)
+[![Live demo](https://img.shields.io/badge/Live%20demo-GitHub%20Pages-b3121b)](https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/) [![CI](https://github.com/Rishabh-bgp/rso-net-wind-grid-stabilization/actions/workflows/ci.yml/badge.svg)](https://github.com/Rishabh-bgp/rso-net-wind-grid-stabilization/actions/workflows/ci.yml) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Rishabh-bgp/rso-net-wind-grid-stabilization/blob/main/notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb)
 
 > **Reference implementation.** This is the reference implementation of my paper (Rishabh Aryan), rebuilt in Python on synthetic data because the original SCADA data is confidential. Results will differ from the published numbers. Authors: Rishabh Aryan (sole author). This model is fully classical and runs on CPU.
 > Results from this code **will differ** from the published results, and the numbers reported in the paper have **not** been reproduced here.
