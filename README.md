@@ -32,7 +32,7 @@ P10–P90 band → advisory reserve proposal → human approval gate
 
 ## Data
 
-The original SCADA data used in the paper is confidential and **not publicly available**, so it is not included here (and `data/` is git-ignored). The original code was not available either.
+The original SCADA data used in the paper is confidential and **not publicly available**, so it is not included here (everything in `data/` except the bundled synthetic CSV is git-ignored). The original code was not available either.
 `src/data.py` provides:
 
 - `load_scada_csv(path)`: loads a SCADA-style CSV with columns for timestamp, wind speed (m/s), wind direction (°),
