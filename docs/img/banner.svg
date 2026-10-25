@@ -1,13 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="RSO-Net · Wind Forecasting for Grid Stability: reference implementation by Rishabh Aryan">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="RSO-Net · Wind Forecasting for Grid Stability: reference implementation by Rishabh Aryan">
 <defs><radialGradient id="g" cx="20%" cy="0%" r="110%"><stop offset="0" stop-color="#b3121b"/><stop offset=".5" stop-color="#7a0e0e"/><stop offset="1" stop-color="#121212"/></radialGradient></defs>
-<rect width="1200" height="300" fill="url(#g)"/>
-<path d="M0 300 L0 230 Q120 180 240 220 Q360 170 500 215 Q640 180 780 222 Q920 182 1060 220 Q1130 205 1200 222 L1200 300Z" fill="#121212" opacity=".55"/>
-<g transform="translate(140,150)"><circle r="74" fill="#f3ead8" stroke="#d8b25a" stroke-width="5"/>
-<path d="M0 -74a74 74 0 0 1 0 148a37 37 0 0 1 0-74a37 37 0 0 0 0-74z" fill="#121212"/><circle cy="-37" r="10" fill="#f3ead8"/><circle cy="37" r="10" fill="#121212"/></g>
-<text x="260" y="148" font-family="Georgia,'Times New Roman',serif" font-size="58" font-weight="700" fill="#f3ead8" textLength="245" lengthAdjust="spacingAndGlyphs">RSO-Net</text>
-<text x="262" y="198" font-family="Helvetica,Arial,'Noto Sans TC',sans-serif" font-size="27" fill="#d8b25a">Wind forecasting for grid stability · 巽 Xun</text>
-<path d="M262 226 C450 214 640 236 900 222" stroke="#d8b25a" stroke-width="4" fill="none" stroke-linecap="round" opacity=".9"/>
-<rect x="1010" y="70" width="120" height="20" rx="3" fill="#d4af37"/><rect x="1010" y="106" width="120" height="20" rx="3" fill="#d4af37"/><rect x="1010" y="142" width="52" height="20" rx="3" fill="#d4af37"/><rect x="1078" y="142" width="52" height="20" rx="3" fill="#d4af37"/>
-<g transform="translate(1036,190) rotate(-5)"><rect width="68" height="68" rx="7" fill="#b3121b" stroke="#f3ead8" stroke-width="2"/><rect x="6" y="6" width="56" height="56" rx="4" fill="none" stroke="#f3ead8" stroke-width="2"/>
-<text x="34" y="45" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="26" fill="#f3ead8">RS</text></g>
+<rect width="1280" height="320" fill="url(#g)"/>
+<text x="80" y="150" font-family="Georgia,'Times New Roman',serif" font-size="66" font-weight="700" fill="#f3ead8" textLength="266" lengthAdjust="spacingAndGlyphs">RSO-Net</text>
+<rect x="70" y="180" width="900" height="60" rx="6" fill="#121212" opacity=".82"/>
+<text x="80" y="223" font-family="Helvetica,Arial,'Noto Sans TC',sans-serif" font-size="40" font-weight="700" fill="#d4af37" textLength="880" lengthAdjust="spacingAndGlyphs">Wind forecasting for grid stability · 巽 Xun</text>
+<rect x="1080" y="80" width="120" height="18" rx="3" fill="#d4af37"/><rect x="1080" y="110" width="120" height="18" rx="3" fill="#d4af37"/><rect x="1080" y="140" width="52" height="18" rx="3" fill="#d4af37"/><rect x="1148" y="140" width="52" height="18" rx="3" fill="#d4af37"/>
+<g transform="translate(1108,174) rotate(-4)"><rect width="64" height="64" rx="7" fill="#b3121b" stroke="#f3ead8" stroke-width="2"/><rect x="6" y="6" width="52" height="52" rx="4" fill="none" stroke="#f3ead8" stroke-width="2"/>
+<text x="32" y="42" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="24" fill="#f3ead8">RS</text></g>
 </svg>
