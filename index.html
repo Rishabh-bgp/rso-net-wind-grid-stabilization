@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RSO-Net: Probabilistic Wind Forecasting for Grid Stability | Live Demo by Rishabh Aryan</title>
+<meta name="description" content="Live in-browser demo: RSO-Net: Probabilistic Wind Forecasting for Grid Stability. Independent reimplementation for wind speed forecasting on synthetic SCADA-style data, by Rishabh Aryan.">
+<meta name="keywords" content="wind speed forecasting, temporal convolutional network, dilated causal convolution, self-attention, probabilistic forecasting, quantile regression, grid stabilization, human-in-the-loop, PyTorch"><meta name="author" content="Rishabh Aryan">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="hero"><svg class="turbine" viewBox="0 0 120 200" aria-hidden="true"><rect x="57" y="60" width="6" height="140" rx="3" fill="#e8f4ff"/>
+<g class="blades"><path d="M60 60 L56 8 Q60 2 64 8 Z"/><path d="M60 60 L56 8 Q60 2 64 8 Z" transform="rotate(120 60 60)"/><path d="M60 60 L56 8 Q60 2 64 8 Z" transform="rotate(240 60 60)"/><circle cx="60" cy="60" r="6"/></g></svg>
+<div><p class="tag">LIVE DEMO · runs 100% in your browser</p><h1>RSO-Net: Probabilistic Wind Forecasting for Grid Stability</h1><p class="sub">Independent reimplementation by Rishabh Aryan of a published wind speed forecasting method, shown on synthetic SCADA-style data.</p>
+<p class="links"><a href="https://github.com/Rishabh-bgp/rso-net-wind-grid-stabilization">GitHub repository</a> · <a href="https://github.com/Rishabh-bgp/rso-net-wind-grid-stabilization/blob/main/notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb">Notebook</a></p></div></header>
+<div class="warn"><b>Disclaimer:</b> independent reimplementation, not the paper authors' code. The model is a small demo trained briefly on <b>synthetic</b> SCADA-style data (not the confidential SCADA data used in the paper). These numbers <b>do not reproduce the paper's results</b>.</div>
+<main>
+<section class="card wide"><h2>Forecast vs. actual (synthetic test set, 10-min steps)</h2><canvas id="chart" width="1100" height="320"></canvas>
+<div class="legend"><span class="l a"></span>actual <span class="l m"></span>model (computed live in JS) <span class="l p"></span>persistence</div></section>
+<section class="card"><h2>Try it: next-step forecast</h2>
+<label>Current wind speed <b id="wsv"></b><input id="ws" type="range" min="0" max="24" step="0.1" value="8"></label>
+<label>Wind direction <b id="wdv"></b><input id="wd" type="range" min="0" max="359" step="1" value="210"></label>
+<label>Recent trend (m/s per 10 min) <b id="trv"></b><input id="tr" type="range" min="-0.6" max="0.6" step="0.02" value="0.1"></label>
+<div class="out"><div><span>Forecast (next 10 min)</span><strong id="fc">–</strong></div><div><span>Persistence</span><strong id="ps">–</strong></div></div><p id="band" class="small"></p>
+<p class="small">The sliders build a 24-step history ending at the chosen speed; the power columns follow a generic cubic power curve.</p></section>
+<section class="card"><h2>Test-set metrics (synthetic)</h2><table id="mt"><tr><th></th><th>Model</th><th>Persistence</th></tr></table>
+<p class="small"><b>Persistence</b> predicts "next = current". At 10 minutes ahead it is already very accurate, so it is the honest yardstick.</p></section>
+<section class="card wide"><h2>How it works</h2><p>Dilated causal convolutions (a TCN) and self-attention produce P10/P50/P90 quantile forecasts; the band can drive an advisory, human-approved reserve suggestion. The model predicts the 10-minute <i>change</i> in wind speed and adds it to the current reading.</p><p class="small">Weights were trained in PyTorch, exported to JSON and re-implemented in plain JavaScript. A test checks that the JS and Python predictions match within 1e-4.</p></section>
+</main><footer>© 2026 Rishabh Aryan · MIT licence · Paper credit: Er. Rishabh Aryan, "Recursive Self-Optimizing Neural Architectures for Ultra-High-Resolution Wind Speed Forecasting and Autonomous Grid-Stabilization Protocols Under Extreme Uncertainty," International Journal of Artificial Intelligence and Communication Networks (IJAICN), ISSN 3071-3358, Vol. 02, Issue 03, pp. 5–29, July–September 2026.</footer>
+<script src="model.js"></script><script src="app.js"></script></body></html>
