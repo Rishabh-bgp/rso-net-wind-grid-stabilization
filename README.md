@@ -4,7 +4,7 @@
 
 [![Live demo](https://img.shields.io/badge/Live%20demo-GitHub%20Pages-b3121b)](https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/) [![CI](https://github.com/Rishabh-bgp/rso-net-wind-grid-stabilization/actions/workflows/ci.yml/badge.svg)](https://github.com/Rishabh-bgp/rso-net-wind-grid-stabilization/actions/workflows/ci.yml) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Rishabh-bgp/rso-net-wind-grid-stabilization/blob/main/notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb) [![License: MIT](https://img.shields.io/badge/License-MIT-d4af37.svg)](LICENSE) ![Python 3.12](https://img.shields.io/badge/python-3.12-1a1a1a) ![Data: synthetic](https://img.shields.io/badge/data-synthetic-1a1a1a)
 
-> **Reference implementation.** This is the reference implementation of my paper (Rishabh Aryan), rebuilt in Python on synthetic data because the original SCADA data is confidential. Results will differ from the published numbers. Authors: Rishabh Aryan (sole author). This model is fully classical and runs on CPU.
+> **Reference implementation.** This is the reference implementation of my paper (Rishabh Aryan), rebuilt in Python on synthetic data because the original data is confidential. Results will differ from the published numbers. Authors: Rishabh Aryan (sole author). This model is fully classical and runs on CPU.
 > Results from this code **will differ** from the published results, and the numbers reported in the paper have **not** been reproduced here.
 
 **Keywords:** wind speed forecasting, temporal convolutional network, dilated causal convolution, self-attention, probabilistic forecasting, quantile regression, grid stabilization, human-in-the-loop, PyTorch
@@ -50,7 +50,7 @@ The original SCADA data used in the paper is confidential and **not publicly ava
 Features per time step are wind speed, sin/cos of direction, theoretical power and active power (kW/1000), standardized
 on the training split. The target is wind speed `horizon` steps ahead. The data is split chronologically 70/15/15.
 
-## How to run · 運行
+## How to run · 執行
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
@@ -112,7 +112,7 @@ pytest -q
 - The paper targets sub-minute (30 s) data; the synthetic generator defaults to 10-minute steps (`freq` argument in `synthetic_scada`).
 - ARIMA/LSTM baselines and the multi-agent system are not included; only a persistence baseline is reported.
 
-## License · 許可
+## License · 許可證
 
 MIT © 2026 Rishabh Aryan. See [LICENSE](LICENSE). The paper itself remains under its publisher's terms.
 
@@ -160,8 +160,6 @@ This repository is part of my M.Tech thesis work.
 | | Repository | Approach | Live |
 |:---:|---|---|---|
 | `07 ☵ 坎 Kan` | [arima-sarima-wind-speed-chennai](https://github.com/Rishabh-bgp/arima-sarima-wind-speed-chennai) | ARIMA(3,0,2) and SARIMA(0,1,2)(0,1,2,4) daily wind speed forecasting for Chennai | [demo](https://rishabh-bgp.github.io/arima-sarima-wind-speed-chennai/) |
-
-<!-- THESIS-PLACEHOLDER: add further thesis repos as rows in the matching group, ordered by paper number. -->
 
 ## Other repositories by Rishabh Aryan · 其他
 
