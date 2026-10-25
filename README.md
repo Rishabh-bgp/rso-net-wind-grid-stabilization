@@ -1,5 +1,7 @@
 # RSO-Net: Recursive Self-Optimizing TCN-Attention Wind Speed Forecasting with Human-Approved Grid-Stabilization Proposals (Reimplementation)
 
+[![Live demo](https://img.shields.io/badge/Live%20demo-GitHub%20Pages-2ec4b6)](https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Rishabh-bgp/rso-net-wind-grid-stabilization/blob/main/notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb)
+
 > **Independent reimplementation.** This repository is a clean, independent reimplementation of the method described in the
 > paper cited below, written from the paper's text. It is **not** the original authors' code, and it does **not** use the
 > paper's dataset. This model is fully classical and runs on CPU.
@@ -75,6 +77,22 @@ end to end. They say nothing about the method's real accuracy. At this budget th
 | RMSE | 1.113 | 0.449 |
 | MAPE (%) | 21.227 | 7.654 |
 | R² | 0.597 | 0.934 |
+
+## Live demo
+
+**[https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/](https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/)** runs entirely in your browser. A small version of the model (trained briefly on the bundled synthetic CSV to predict the 10-minute change in wind speed) is exported to JSON by `web/export_model.py`, and its forward pass is re-implemented in plain JavaScript (`site/model.js`). `tests/test_js_parity.py` checks that the JS and PyTorch predictions agree within 1e-4. The page shows a forecast chart against persistence, sliders for wind inputs, the metrics and the disclaimer.
+
+![Live demo screenshot](docs/img/demo.png)
+
+## Notebook
+
+[`notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb`](notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Rishabh-bgp/rso-net-wind-grid-stabilization/blob/main/notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb) is a short, beginner-friendly walkthrough: load the synthetic CSV, quick EDA plots, a small version of the model, brief training and a comparison with a persistence baseline. It works when opened on its own in Colab (it fetches the repo code and data). It uses **synthetic data only** and does **not** reproduce the paper's results.
+
+## Tests
+
+```bash
+pytest -q
+```
 
 ## Repository layout
 

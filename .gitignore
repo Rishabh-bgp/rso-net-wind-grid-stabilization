@@ -9,3 +9,4 @@ results/
 *.pt
 .ipynb_checkpoints/
 .DS_Store
+.pytest_cache/
