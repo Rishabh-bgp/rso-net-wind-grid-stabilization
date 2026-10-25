@@ -1,12 +1,10 @@
-<p align="center"><img src="docs/img/banner.svg" alt="RSO-Net · Wind Forecasting for Grid Stability: Daoist-style banner, independent reimplementation by Rishabh Aryan" width="100%"></p>
+<p align="center"><img src="docs/img/banner.svg" alt="RSO-Net · Wind Forecasting for Grid Stability: Daoist-style banner, reference implementation by Rishabh Aryan" width="100%"></p>
 
-# RSO-Net: Recursive Self-Optimizing TCN-Attention Wind Speed Forecasting with Human-Approved Grid-Stabilization Proposals (Reimplementation)
+# RSO-Net: Recursive Self-Optimizing TCN-Attention Wind Speed Forecasting with Human-Approved Grid-Stabilization Proposals (Reference Implementation)
 
-[![Live demo](https://img.shields.io/badge/Live%20demo-GitHub%20Pages-2ec4b6)](https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Rishabh-bgp/rso-net-wind-grid-stabilization/blob/main/notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb)
+[![Live demo](https://img.shields.io/badge/Live%20demo-GitHub%20Pages-b3121b)](https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Rishabh-bgp/rso-net-wind-grid-stabilization/blob/main/notebooks/rso-net-wind-grid-stabilization_walkthrough.ipynb)
 
-> **Independent reimplementation.** This repository is a clean, independent reimplementation of the method described in the
-> paper cited below, written from the paper's text. It is **not** the original authors' code, and it does **not** use the
-> paper's dataset. This model is fully classical and runs on CPU.
+> **Reference implementation.** This is the reference implementation of my paper (Rishabh Aryan), rebuilt in Python on synthetic data because the original SCADA data is confidential. Results will differ from the published numbers. Authors: Rishabh Aryan (sole author). This model is fully classical and runs on CPU.
 > Results from this code **will differ** from the published results, and the numbers reported in the paper have **not** been reproduced here.
 
 **Keywords:** wind speed forecasting, temporal convolutional network, dilated causal convolution, self-attention, probabilistic forecasting, quantile regression, grid stabilization, human-in-the-loop, PyTorch
@@ -15,13 +13,13 @@
 
 Er. Rishabh Aryan, "Recursive Self-Optimizing Neural Architectures for Ultra-High-Resolution Wind Speed Forecasting and Autonomous Grid-Stabilization Protocols Under Extreme Uncertainty," *International Journal of Artificial Intelligence and Communication Networks (IJAICN)*, ISSN 3071-3358, Vol. 02, Issue 03, pp. 5–29, July–September 2026.
 
-Full credit for the method goes to the paper's authors. Any simplifications or mistakes in this reimplementation are mine.
+Authors: Rishabh Aryan (sole author). Any simplifications in this Python rebuild are noted under Limitations.
 
 ## Method · 方法
 
 1. **RSO-Net forecaster:** stacked dilated causal convolutions (dilations 1, 2, 4, 8) followed by multi-head self-attention, with a **quantile head** (P10/P50/P90, monotone by construction) trained with pinball loss.
-2. **Bounded self-optimisation:** after each adaptation window (epoch) a controller adjusts the learning rate within fixed bounds based on validation loss. Every change is logged to `results/controller_log.json`, and weights roll back to the best checkpoint if validation gets worse, so it's bounded, logged and reversible as the paper describes.
-3. **Grid-stabilisation proposal:** the P10–P90 band is turned into an **advisory** spinning-reserve suggestion marked `PENDING_HUMAN_APPROVAL` with `auto_execute: false`. Nothing here acts on any real system.
+2. **Bounded self-optimization:** after each adaptation window (epoch) a controller adjusts the learning rate within fixed bounds based on validation loss. Every change is logged to `results/controller_log.json`, and weights roll back to the best checkpoint if validation gets worse, so it's bounded, logged and reversible as the paper describes.
+3. **Grid-stabilization proposal:** the P10–P90 band is turned into an **advisory** spinning-reserve suggestion marked `PENDING_HUMAN_APPROVAL` with `auto_execute: false`. Nothing here acts on any real system.
 
 The paper's six-agent orchestration (built on the OpenAI Agents SDK) and the frequency-response simulation are not included, since they would need an external API account.
 
@@ -36,7 +34,7 @@ P10–P90 band → advisory reserve proposal → human approval gate
 
 ## Data · 數據
 
-The original SCADA data used in the paper is confidential and **not publicly available**, so it is not included here (everything in `data/` except the bundled synthetic CSV is git-ignored). The original code was not available either.
+The original SCADA data used in the paper is confidential and **not publicly available**, so it is not included here (everything in `data/` except the bundled synthetic CSV is git-ignored).
 `src/data.py` provides:
 
 - `load_scada_csv(path)`: loads a SCADA-style CSV with columns for timestamp, wind speed (m/s), wind direction (°),
@@ -49,7 +47,7 @@ The original SCADA data used in the paper is confidential and **not publicly ava
 
 **Bundled synthetic dataset:** `data/synthetic/synthetic_scada.csv` (3000 rows, 10-minute steps, seed 0) is **synthetic data generated by `scripts/make_synthetic.py`**. It is **not** the confidential SCADA data used in the paper and has no connection to any real wind farm. `train.py` uses it by default. To use your own data locally, pass `--csv path/to/scada.csv`. Anything else you put in `data/` is git-ignored, so real data is never committed.
 
-Features per time step are wind speed, sin/cos of direction, theoretical power and active power (kW/1000), standardised
+Features per time step are wind speed, sin/cos of direction, theoretical power and active power (kW/1000), standardized
 on the training split. The target is wind speed `horizon` steps ahead. The data is split chronologically 70/15/15.
 
 ## How to run · 運行
@@ -114,7 +112,7 @@ pytest -q
 - The paper targets sub-minute (30 s) data; the synthetic generator defaults to 10-minute steps (`freq` argument in `synthetic_scada`).
 - ARIMA/LSTM baselines and the multi-agent system are not included; only a persistence baseline is reported.
 
-## Licence · 許可
+## License · 許可
 
 MIT © 2026 Rishabh Aryan. See [LICENSE](LICENSE). The paper itself remains under its publisher's terms.
 

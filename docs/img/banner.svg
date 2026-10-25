@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="RSO-Net · Wind Forecasting for Grid Stability: independent reimplementation by Rishabh Aryan">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="RSO-Net · Wind Forecasting for Grid Stability: reference implementation by Rishabh Aryan">
 <defs><radialGradient id="g" cx="20%" cy="0%" r="110%"><stop offset="0" stop-color="#b3121b"/><stop offset=".5" stop-color="#7a0e0e"/><stop offset="1" stop-color="#121212"/></radialGradient></defs>
 <rect width="1200" height="300" fill="url(#g)"/>
 <path d="M0 300 L0 210 Q90 140 170 190 Q240 120 330 180 Q420 100 520 175 Q600 130 690 185 Q790 90 900 170 Q980 130 1060 180 Q1130 150 1200 190 L1200 300Z" fill="#121212" opacity=".35"/>
@@ -10,7 +10,7 @@
 <text x="27" y="35" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="19" fill="#f3ead8">RS</text></g>
 <text x="270" y="105" font-family="Georgia,serif" font-size="40" font-weight="700" fill="#f3ead8">RSO-Net · Wind Forecasting for Grid Stability</text>
 <text x="272" y="140" font-family="Helvetica,Arial,sans-serif" font-size="17" letter-spacing="3" fill="#d8b25a">道 DAO · 風 WIND · 預測 FORECAST · ☴ 巽 XUN · WIND</text>
-<text x="272" y="170" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#f3ead8" opacity=".85">Independent reimplementation by Rishabh Aryan · synthetic data demo</text>
+<text x="272" y="170" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#f3ead8" opacity=".85">Reference implementation by Rishabh Aryan · synthetic data demo</text>
 <path d="M272 196 C470 180 640 210 860 192 S1080 184 1150 194" stroke="#d8b25a" stroke-width="5" fill="none" stroke-linecap="round"/>
 <path d="M300 208 C500 200 660 216 880 208 S1060 204 1120 210" stroke="#f3ead8" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
 <g transform="translate(1090,40)"><rect x="0" y="0" width="60" height="9" rx="1.5" fill="#c9a227"/><rect x="0" y="19" width="60" height="9" rx="1.5" fill="#c9a227"/><rect x="0" y="38" width="25.2" height="9" rx="1.5" fill="#c9a227"/><rect x="34.8" y="38" width="25.2" height="9" rx="1.5" fill="#c9a227"/></g>
