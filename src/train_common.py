@@ -2,8 +2,9 @@ import json, os, numpy as np, torch
 from .data import load_scada_csv, synthetic_scada, make_windows, split_scale
 from .metrics import regression_metrics
 
-def get_data(csv, n_synth, lookback, horizon):
+def get_data(csv, n_synth, lookback, horizon, max_rows=None):
     df = load_scada_csv(csv) if csv else synthetic_scada(n_synth)
+    if max_rows: df = df.tail(max_rows).reset_index(drop=True)  # --quick: use only the most recent rows
     return split_scale(*make_windows(df, lookback, horizon))
 
 def fit(model, tr, va, epochs=10, lr=1e-3, bs=64, extra_loss=None, verbose=True):

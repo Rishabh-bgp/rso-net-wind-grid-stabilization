@@ -6,8 +6,12 @@ from src.rso_net import RSONet, BoundedController, stabilization_proposal
 ap = argparse.ArgumentParser()
 ap.add_argument("--csv", default="data/synthetic/synthetic_scada.csv", help="SCADA-style CSV; pass \"\" to generate synthetic data in memory"); ap.add_argument("--n_synth", type=int, default=3000); ap.add_argument("--lookback", type=int, default=32)
 ap.add_argument("--horizon", type=int, default=1); ap.add_argument("--epochs", type=int, default=8); ap.add_argument("--seed", type=int, default=42)
-a = ap.parse_args(); torch.manual_seed(a.seed)
-tr, va, te, sc = get_data(a.csv, a.n_synth, a.lookback, a.horizon)
+ap.add_argument("--quick", action="store_true", help="fast smoke run (<1 min): last 1500 rows, few epochs")
+a = ap.parse_args()
+if a.quick: a.epochs = 20
+a.max_rows = 1500 if a.quick else None
+torch.manual_seed(a.seed)
+tr, va, te, sc = get_data(a.csv, a.n_synth, a.lookback, a.horizon, a.max_rows)
 m = RSONet(tr[0].shape[2]); ctl = BoundedController(2e-3); opt = torch.optim.Adam(m.parameters(), lr=ctl.lr)
 Q = torch.tensor(RSONet.QUANTILES); Xt, Yt = torch.tensor(tr[0]), torch.tensor(tr[1]); Xv, Yv = torch.tensor(va[0]), torch.tensor(va[1])
 best, snap = 1e9, None
