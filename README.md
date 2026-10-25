@@ -139,7 +139,11 @@ Wind power forecasting reference implementations from my M.Tech thesis work at I
 
 | | Repository | Approach | Live |
 |:---:|---|---|---|
+| `01 ☴ 巽 Xun` | [cnn-bilstm-attention-synthetic-scada](https://github.com/Rishabh-bgp/cnn-bilstm-attention-synthetic-scada) | CNN-BiLSTM-Attention on synthetic SCADA-style data vs ARIMA, LSTM, XGBoost, Random Forest and SVR | [demo](https://rishabh-bgp.github.io/cnn-bilstm-attention-synthetic-scada/) |
+| `02 ☳ 震 Zhen` | [cnn-bilstm-attention-real-scada](https://github.com/Rishabh-bgp/cnn-bilstm-attention-real-scada) | CNN-BiLSTM-Attention pipeline for real turbine SCADA data (run here on synthetic data, the real data is confidential) | [demo](https://rishabh-bgp.github.io/cnn-bilstm-attention-real-scada/) |
+| `03 ☰ 乾 Qian` | [cnn-bilstm-attention-benchmarking-indian-scada](https://github.com/Rishabh-bgp/cnn-bilstm-attention-benchmarking-indian-scada) | Benchmark of CNN-BiLSTM-Attention vs ANN, LSTM, SVM and ARIMA-ANN with Diebold-Mariano tests | [demo](https://rishabh-bgp.github.io/cnn-bilstm-attention-benchmarking-indian-scada/) |
 | `05 ☲ 離 Li` | [xai-shap-lime-cnn-bilstm-attention-wind](https://github.com/Rishabh-bgp/xai-shap-lime-cnn-bilstm-attention-wind) | Explainable CNN-BiLSTM-Attention forecasting with SHAP and LIME | [demo](https://rishabh-bgp.github.io/xai-shap-lime-cnn-bilstm-attention-wind/) |
+| `06 ☲ 離 Li` | [wind-forecasting-mathematical-formulations-validation](https://github.com/Rishabh-bgp/wind-forecasting-mathematical-formulations-validation) | Equation-by-equation ANN, LSTM/BiLSTM, SVR, ARIMA-ANN and CNN-BiLSTM-Attention with optimizer, learning-rate and statistical validation studies | [demo](https://rishabh-bgp.github.io/wind-forecasting-mathematical-formulations-validation/) |
 | `09+13 ☵ 坎 Kan` | [wuweidl-daoist-gated-wind-forecasting](https://github.com/Rishabh-bgp/wuweidl-daoist-gated-wind-forecasting) | WuWeiDL: Wu Wei gating and Feng-Qi turbulence encoding | [demo](https://rishabh-bgp.github.io/wuweidl-daoist-gated-wind-forecasting/) |
 | `16 ☴ 巽 Xun` | **rso-net-wind-grid-stabilization** (this repo) | RSO-Net: recursive self-optimizing TCN-Attention probabilistic forecasting with grid-stabilization proposals | [demo](https://rishabh-bgp.github.io/rso-net-wind-grid-stabilization/) |
 
@@ -149,6 +153,12 @@ Wind power forecasting reference implementations from my M.Tech thesis work at I
 |:---:|---|---|---|
 | `14 ☳ 震 Zhen` | [iot-n8n-wind-turbine-predictive-maintenance](https://github.com/Rishabh-bgp/iot-n8n-wind-turbine-predictive-maintenance) | IoT + forecasting + n8n automation for wind-turbine predictive maintenance | [demo](https://rishabh-bgp.github.io/iot-n8n-wind-turbine-predictive-maintenance/) |
 | `15 ☱ 兌 Dui` | [multi-agent-turbine-fleet-chief-of-staff](https://github.com/Rishabh-bgp/multi-agent-turbine-fleet-chief-of-staff) | Multi-agent AI chief of staff for wind-turbine fleet operations | [demo](https://rishabh-bgp.github.io/multi-agent-turbine-fleet-chief-of-staff/) |
+
+### Statistical time-series models
+
+| | Repository | Approach | Live |
+|:---:|---|---|---|
+| `07 ☵ 坎 Kan` | [arima-sarima-wind-speed-chennai](https://github.com/Rishabh-bgp/arima-sarima-wind-speed-chennai) | ARIMA(3,0,2) and SARIMA(0,1,2)(0,1,2,4) daily wind speed forecasting for Chennai | [demo](https://rishabh-bgp.github.io/arima-sarima-wind-speed-chennai/) |
 
 <!-- THESIS-PLACEHOLDER: add further thesis repos as rows in the matching group, ordered by paper number. -->
 
