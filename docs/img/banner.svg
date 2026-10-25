@@ -1,17 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="RSO-Net · Wind Forecasting for Grid Stability: reference implementation by Rishabh Aryan">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="RSO-Net · Wind Forecasting for Grid Stability: reference implementation by Rishabh Aryan">
 <defs><radialGradient id="g" cx="20%" cy="0%" r="110%"><stop offset="0" stop-color="#b3121b"/><stop offset=".5" stop-color="#7a0e0e"/><stop offset="1" stop-color="#121212"/></radialGradient></defs>
 <rect width="1200" height="300" fill="url(#g)"/>
-<path d="M0 300 L0 210 Q90 140 170 190 Q240 120 330 180 Q420 100 520 175 Q600 130 690 185 Q790 90 900 170 Q980 130 1060 180 Q1130 150 1200 190 L1200 300Z" fill="#121212" opacity=".35"/>
-<path d="M0 300 L0 250 Q120 200 230 240 Q340 195 470 235 Q600 200 720 238 Q850 205 980 235 Q1090 212 1200 236 L1200 300Z" fill="#121212" opacity=".6"/>
-<path d="M150 80 q30-22 60 0 q22-14 44 4 q-50 6-104-4z M900 60 q34-24 68 0 q24-16 50 4 q-58 8-118-4z" fill="#f3ead8" opacity=".15"/>
-<g transform="translate(80,70)"><circle cx="60" cy="60" r="58" fill="#f3ead8" stroke="#d8b25a" stroke-width="4"/>
-<path d="M60 2a58 58 0 0 1 0 116a29 29 0 0 1 0-58a29 29 0 0 0 0-58z" fill="#121212"/><circle cx="60" cy="31" r="8" fill="#f3ead8"/><circle cx="60" cy="89" r="8" fill="#121212"/></g>
-<g transform="translate(176,160) rotate(-6)"><rect width="54" height="54" rx="6" fill="#b3121b" stroke="#121212" stroke-width="1"/><rect x="5" y="5" width="44" height="44" rx="3" fill="none" stroke="#f3ead8" stroke-width="2"/>
-<text x="27" y="35" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="19" fill="#f3ead8">RS</text></g>
-<text x="270" y="105" font-family="Georgia,serif" font-size="40" font-weight="700" fill="#f3ead8">RSO-Net · Wind Forecasting for Grid Stability</text>
-<text x="272" y="140" font-family="Helvetica,Arial,sans-serif" font-size="17" letter-spacing="3" fill="#d8b25a">道 DAO · 風 WIND · 預測 FORECAST · ☴ 巽 XUN · WIND</text>
-<text x="272" y="170" font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#f3ead8" opacity=".85">Reference implementation by Rishabh Aryan · synthetic data demo</text>
-<path d="M272 196 C470 180 640 210 860 192 S1080 184 1150 194" stroke="#d8b25a" stroke-width="5" fill="none" stroke-linecap="round"/>
-<path d="M300 208 C500 200 660 216 880 208 S1060 204 1120 210" stroke="#f3ead8" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
-<g transform="translate(1090,40)"><rect x="0" y="0" width="60" height="9" rx="1.5" fill="#c9a227"/><rect x="0" y="19" width="60" height="9" rx="1.5" fill="#c9a227"/><rect x="0" y="38" width="25.2" height="9" rx="1.5" fill="#c9a227"/><rect x="34.8" y="38" width="25.2" height="9" rx="1.5" fill="#c9a227"/></g>
+<path d="M0 300 L0 230 Q120 180 240 220 Q360 170 500 215 Q640 180 780 222 Q920 182 1060 220 Q1130 205 1200 222 L1200 300Z" fill="#121212" opacity=".55"/>
+<g transform="translate(140,150)"><circle r="74" fill="#f3ead8" stroke="#d8b25a" stroke-width="5"/>
+<path d="M0 -74a74 74 0 0 1 0 148a37 37 0 0 1 0-74a37 37 0 0 0 0-74z" fill="#121212"/><circle cy="-37" r="10" fill="#f3ead8"/><circle cy="37" r="10" fill="#121212"/></g>
+<text x="260" y="148" font-family="Georgia,'Times New Roman',serif" font-size="58" font-weight="700" fill="#f3ead8" textLength="245" lengthAdjust="spacingAndGlyphs">RSO-Net</text>
+<text x="262" y="198" font-family="Helvetica,Arial,'Noto Sans TC',sans-serif" font-size="27" fill="#d8b25a">Wind forecasting for grid stability · 巽 Xun</text>
+<path d="M262 226 C450 214 640 236 900 222" stroke="#d8b25a" stroke-width="4" fill="none" stroke-linecap="round" opacity=".9"/>
+<rect x="1010" y="70" width="120" height="20" rx="3" fill="#d4af37"/><rect x="1010" y="106" width="120" height="20" rx="3" fill="#d4af37"/><rect x="1010" y="142" width="52" height="20" rx="3" fill="#d4af37"/><rect x="1078" y="142" width="52" height="20" rx="3" fill="#d4af37"/>
+<g transform="translate(1036,190) rotate(-5)"><rect width="68" height="68" rx="7" fill="#b3121b" stroke="#f3ead8" stroke-width="2"/><rect x="6" y="6" width="56" height="56" rx="4" fill="none" stroke="#f3ead8" stroke-width="2"/>
+<text x="34" y="45" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="26" fill="#f3ead8">RS</text></g>
 </svg>

@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/img/banner.svg" alt="RSO-Net · Wind Forecasting for Grid Stability: Daoist-style banner, reference implementation by Rishabh Aryan" width="100%"></p>
+<p align="center"><img src="docs/img/banner.png" alt="RSO-Net · Wind Forecasting for Grid Stability: Daoist-style banner, reference implementation by Rishabh Aryan" width="100%"></p>
 
 # RSO-Net: Recursive Self-Optimizing TCN-Attention Wind Speed Forecasting with Human-Approved Grid-Stabilization Proposals (Reference Implementation)
 
