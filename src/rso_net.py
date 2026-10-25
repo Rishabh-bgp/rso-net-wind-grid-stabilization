@@ -1,5 +1,5 @@
 """RSO-Net: dilated causal TCN + self-attention, probabilistic (quantile) head; bounded, logged, reversible
-outer-loop hyperparameter controller; advisory grid-stabilisation proposal with a mandatory human-approval gate."""
+outer-loop hyperparameter controller; advisory grid-stabilization proposal with a mandatory human-approval gate."""
 import json, torch, torch.nn as nn
 
 class CausalConv(nn.Module):

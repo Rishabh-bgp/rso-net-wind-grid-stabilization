@@ -1,4 +1,4 @@
-"""Train/evaluate RSO-Net (quantile TCN-attention) with bounded self-optimising LR controller.
+"""Train/evaluate RSO-Net (quantile TCN-attention) with bounded self-optimizing LR controller.
 Example: python train.py --epochs 3"""
 import argparse, json, os, torch
 from src.train_common import get_data, evaluate
