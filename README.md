@@ -171,4 +171,5 @@ This repository is part of my M.Tech thesis work.
 - [california-house-price-prediction](https://github.com/Rishabh-bgp/california-house-price-prediction)
 - [iris-classification](https://github.com/Rishabh-bgp/iris-classification)
 - [machine-learning-part-1](https://github.com/Rishabh-bgp/machine-learning-part-1)
+- [machine-learning-part-2](https://github.com/Rishabh-bgp/machine-learning-part-2)
 - [All repositories](https://github.com/Rishabh-bgp?tab=repositories)
