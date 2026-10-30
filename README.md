@@ -172,4 +172,5 @@ This repository is part of my M.Tech thesis work.
 - [iris-classification](https://github.com/Rishabh-bgp/iris-classification)
 - [machine-learning-part-1](https://github.com/Rishabh-bgp/machine-learning-part-1)
 - [machine-learning-part-2](https://github.com/Rishabh-bgp/machine-learning-part-2)
+- [machine-learning-part-3](https://github.com/Rishabh-bgp/machine-learning-part-3)
 - [All repositories](https://github.com/Rishabh-bgp?tab=repositories)
