@@ -165,6 +165,7 @@ This repository is part of my M.Tech thesis work.
 
 - [beed-ml-study](https://github.com/Rishabh-bgp/beed-ml-study)
 - [pan-cancer-classification](https://github.com/Rishabh-bgp/pan-cancer-classification)
+- [brain-tumor-mri-classification](https://github.com/Rishabh-bgp/brain-tumor-mri-classification) · [live demo](https://rishabh-bgp.github.io/brain-tumor-mri-classification/)
 - [spam-scan](https://github.com/Rishabh-bgp/spam-scan)
 - [real-estate-valuation-taiwan](https://github.com/Rishabh-bgp/real-estate-valuation-taiwan)
 - [boston-house-price-prediction](https://github.com/Rishabh-bgp/boston-house-price-prediction)
